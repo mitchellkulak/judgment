@@ -1,6 +1,11 @@
 <template>
   <div class="container">
-    <div></div>
+    <div>
+      <slot name="leftOption"></slot>
+    </div>
+    <div>
+      <slot name="rightOption"></slot>
+    </div>
   </div>
 </template>
 
