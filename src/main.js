@@ -7,4 +7,5 @@ new Vue({
   render(h) {
     return h(App);
   },
+
 }).$mount("#app");

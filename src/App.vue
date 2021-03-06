@@ -79,9 +79,9 @@ export default {
     shredLeft() {
       anime({
         targets: ".paintingLeft",
-        translateY: 200,
+        translateY: 230,
         duration: 1700,
-        easing: "linear",
+        easing: "easeOutCirc",
       });
       anime({
         targets: ".fullPaintingLeft",
@@ -89,15 +89,15 @@ export default {
         translateY: 1,
         duration: 100,
         loop: 20,
-        easing: "linear",
+        easing: "easeOutCirc",
       });
     },
     shredRight() {
       anime({
         targets: ".paintingRight",
-        translateY: 200,
+        translateY: 230,
         duration: 1700,
-        easing: "linear",
+        easing: "easeOutCirc",
       });
       anime({
         targets: ".fullPaintingRight",
@@ -105,23 +105,23 @@ export default {
         translateY: 1,
         duration: 100,
         loop: 20,
-        easing: "linear",
+        easing: "easeOutCirc",
       });
     },
     awardLeft() {
       anime({
         targets: ".blueRibbonLeft",
-        translateX: 500,
-        duration: 900,
-        easing: "linear",
+        translateX: 680,
+        duration: 1100,
+        easing: "easeOutCirc",
       });
     },
     awardRight() {
       anime({
         targets: ".blueRibbonRight",
-        translateX: -500,
-        duration: 900,
-        easing: "linear",
+        translateX: -680,
+        duration: 1100,
+        easing: "easeOutCirc",
       });
     },
   },
@@ -228,19 +228,20 @@ html {
   margin: 0px;
 }
 .blueRibbonLeft {
+  display: inline;
   width: 120px;
   height: 168px;
-  position: absolute;
-  left: -150px;
-  top: 490px;
+  position: relative;
+  left: -1050px;
+  top: -415px;
   z-index: 100;
 }
 .blueRibbonRight {
   width: 120px;
   height: 168px;
-  position: absolute;
-  right: -150px;
-  top: 490px;
+  position: relative;
+  right: -1050px;
+  top: -415px;
   z-index: 100;
 }
 </style>
