@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="optionsContainer">
+    <div class="judgmentContainer">
       <div class="outerOption">
         <slot name="leftOption"></slot>
       </div>
@@ -9,8 +9,8 @@
       </div>
     </div>
     <div class="buttonContainer">
-      <div class="leftButton button"></div>
-      <div class="rightButton button"></div>
+      <div class="leftButton button" @click="selectLeft()"></div>
+      <div class="rightButton button" @click="selectRight()"></div>
     </div>
   </div>
 </template>
@@ -22,47 +22,65 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    selectLeft() {
+      this.$emit("leftSelected");
+    },
+    selectRight() {
+      this.$emit("rightSelected");
+    },
+  },
 };
 </script>
 
 <style>
 .container {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
-.optionsContainer {
+.judgmentContainer {
   width: 100%;
   display: flex;
   flex-direction: space-between;
   justify-content: center;
 }
 .outerOption {
-  padding: 70px;
+  padding-left: 120px;
+  padding-right: 120px;
 }
 .leftOption {
-  display: inline-block;
 }
 .rightOption {
-  display: inline-block;
 }
 .buttonContainer {
   width: 100%;
   display: flex;
   flex-direction: space-between;
   justify-content: center;
+  position: absolute;
+  bottom: 250px;
 }
 .button {
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
   opacity: 80%;
+}
+.button:hover {
+  cursor: pointer;
 }
 .leftButton {
   background-image: url("~@/assets/images/leftButton.png");
   background-size: cover;
-  margin-right: 20px;
 }
 .rightButton {
   background-image: url("~@/assets/images/rightButton.png");
   background-size: cover;
-  margin-left: 20px;
+}
+.shredding {
+}
+.fridging {
 }
 </style>
